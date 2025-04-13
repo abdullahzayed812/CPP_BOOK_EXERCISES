@@ -154,6 +154,26 @@ class TowLargestNumbers {
   }
 };
 
+class DrawShape {
+ public:
+  void run() {
+    int row = 10;
+    int column;
+
+    while (row >= 1) {
+      column = 1;
+
+      while (column <= 50) {
+        std::cout << (row % 2 ? ">" : "<");
+        column++;
+      }
+
+      row--;
+      std::cout << "\n";
+    }
+  }
+};
+
 int main() {
   // EmployeeSalary empSalary;
   // empSalary.run();
@@ -167,20 +187,8 @@ int main() {
   // TowLargestNumbers towLargestNumbers;
   // towLargestNumbers.run();
 
-  int row = 10;
-  int column;
-
-  while (row >= 1) {
-    column = 1;
-
-    while (column <= 50) {
-      std::cout << (row % 2 ? ">" : "<");
-      column++;
-    }
-
-    row--;
-    std::cout << "\n";
-  }
+  DrawShape drawShape;
+  drawShape.run();
 
   return 0;
 }
