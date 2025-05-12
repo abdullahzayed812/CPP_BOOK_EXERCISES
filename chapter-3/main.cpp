@@ -174,6 +174,31 @@ class DrawShape {
   }
 };
 
+class DrawSquareAsterisks {
+ public:
+  void run() {
+    int squareSide;
+    std::cout << "Enter square side (1 - 20): ";
+    std::cin >> squareSide;
+
+    if (squareSide < 1 || squareSide > 20) {
+      std::cout << "Invalid input, please inter value between 1 to 20." << '\n';
+      return;
+    }
+
+    for (int rows = 0; rows < squareSide; rows++) {
+      for (int columns = 0; columns < squareSide; columns++) {
+        if (rows == 0 || rows == squareSide - 1 || columns == 0 || columns == squareSide - 1) {
+          std::cout << "*";
+        } else {
+          std::cout << " ";
+        }
+      }
+      std::cout << "\n";
+    }
+  }
+};
+
 int main() {
   // EmployeeSalary empSalary;
   // empSalary.run();
@@ -187,8 +212,8 @@ int main() {
   // TowLargestNumbers towLargestNumbers;
   // towLargestNumbers.run();
 
-  DrawShape drawShape;
-  drawShape.run();
+  DrawSquareAsterisks squareAsterisks;
+  squareAsterisks.run();
 
   return 0;
 }
