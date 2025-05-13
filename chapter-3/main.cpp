@@ -199,21 +199,45 @@ class DrawSquareAsterisks {
   }
 };
 
+class EstimateE {
+ private:
+  long long factorial(int n) {
+    long long fact = 1;
+    for (int i = 2; i <= n; i++) {
+      fact *= i;
+    }
+    return fact;
+  }
+
+ public:
+  void run() {
+    int terms;
+    double e = 1.0;
+
+    std::cout << "Enter number of terms to estimate e: ";
+    std::cin >> terms;
+
+    for (int i = 1; i <= terms; i++) {
+      e += 1.0 / factorial(i);
+    }
+
+    std::cout << "Estimated value of e using " << terms << " terms is: " << e << '\n';
+  }
+};
+
+long long factorial(int n) {
+  long long fact = 1;
+
+  for (int i = 2; i <= n; i++) {
+    fact *= i;
+  }
+
+  return fact;
+}
+
 int main() {
-  // EmployeeSalary empSalary;
-  // empSalary.run();
-
-  // LargestNumber largestNumber;
-  // largestNumber.run();
-
-  // TabularOutput tabularOutput;
-  // tabularOutput.run();
-
-  // TowLargestNumbers towLargestNumbers;
-  // towLargestNumbers.run();
-
-  DrawSquareAsterisks squareAsterisks;
-  squareAsterisks.run();
+  EstimateE e;
+  e.run();
 
   return 0;
 }
